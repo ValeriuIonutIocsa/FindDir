@@ -5,18 +5,15 @@
     <option name="USE_PROJECT_LEVEL_SETTINGS" value="false" />
     <list size="0" />
   </component>
+  <component name="Black">
+    <option name="sdkName" value="Python 3.9" />
+  </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="PDMPlugin">
     <option name="customRuleSets">
       <list>
         <option value="C:\IVI\Apps\Eclipse\settings\PmdRuleset.xml" />
       </list>
-    </option>
-    <option name="options">
-      <map>
-        <entry key="Statistics URL" value="" />
-        <entry key="Target JDK" value="11" />
-      </map>
     </option>
     <option name="skipTestSources" value="false" />
   </component>
