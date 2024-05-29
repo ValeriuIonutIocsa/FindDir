@@ -5,7 +5,7 @@ ext {
     jarFolderPath = 'C:\\IVI\\Apps\\Scripts\\General\\FindDir'
 
     subProjectNames = [
-            ':test-utils'
+            ':io-utils'
     ]
     compileClassPaths = []
     compileJarFilePaths = []
