@@ -13,7 +13,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
 import com.utils.log.Logger;
@@ -85,14 +84,11 @@ final class AppStartFindDir {
 				}
 			});
 
-			final ExecutorService executorService = Executors.newFixedThreadPool(12);
-			for (final Runnable runnable : runnableList) {
-				executorService.execute(runnable);
-			}
-			executorService.shutdown();
-			final boolean success = executorService.awaitTermination(10, TimeUnit.SECONDS);
-			if (!success) {
-				Logger.printError("failed to terminate all threads");
+			try (ExecutorService executorService = Executors.newFixedThreadPool(12)) {
+
+				for (final Runnable runnable : runnableList) {
+					executorService.execute(runnable);
+				}
 			}
 
 			for (int i = 0; i < folderPathList.size(); i++) {
